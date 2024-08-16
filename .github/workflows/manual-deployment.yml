@@ -36,7 +36,7 @@ jobs:
         id: deploy
         uses: decentraland/dcl-deploy-action@main
         with:
-          dockerImage: "quay.io/decentraland/realm-provider:${{ inputs.tag }}"
-          serviceName: archipelago-nats
+          dockerImage: "quay.io/decentraland/archipelago-nats:${{ inputs.tag }}"
+          serviceName: ${{ inputs.service-name }}
           env: ${{ inputs.deployment-environment }}
           token: ${{ secrets.GITHUB_TOKEN }}
